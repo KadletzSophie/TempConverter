@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -29,7 +30,14 @@ public class Main extends Application {
         label_fahrenheit.setMinSize(100,20);
         label_fahrenheit.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
         label_fahrenheit.setStyle("-fx-font-size:20;-fx-font-weight: bold");
-        
+
+        TextField tf_celsius = new TextField();
+        tf_celsius.setMinSize(100,20);
+        tf_celsius.setStyle("-fx-font-size:20;-fx-font-weight: bold");
+        TextField tf_fahrenheit = new TextField();
+        tf_fahrenheit.setMinSize(100,20); 
+        tf_fahrenheit.setStyle("-fx-font-size:20;-fx-font-weight: bold");
+
         box_main.getChildren().addAll();
         stage.setTitle("Temp. Converter");
         stage.setScene(scene);
