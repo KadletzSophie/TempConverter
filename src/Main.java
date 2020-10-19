@@ -13,6 +13,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * @author Sophie Kadletz
+ * @verison 15.10.2020; 19.10.2020
+ */
+
 public class Main extends Application {
     public static void main(String[] args) {
         Application.launch(args);
@@ -37,6 +42,7 @@ public class Main extends Application {
         TextField tf_celsius = new TextField();
         tf_celsius.setMinSize(100,20);
         tf_celsius.setStyle("-fx-font-size:20;-fx-font-weight: bold");
+
         TextField tf_fahrenheit = new TextField();
         tf_fahrenheit.setMinSize(100,20);
         tf_fahrenheit.setStyle("-fx-font-size:20;-fx-font-weight: bold");
@@ -59,7 +65,6 @@ public class Main extends Application {
                     System.out.println("Bitte geben sie einen gültigen (numerischen) Wert ein.");
                 }
             }
-
         };
 
         EventHandler<MouseEvent> handler2 = new EventHandler<MouseEvent>() {
@@ -74,7 +79,6 @@ public class Main extends Application {
                     System.out.println("Bitte geben sie einen gültigen (numerischen) Wert ein.");
                 }
             }
-
         };
 
         b_celsius.addEventHandler(MouseEvent.MOUSE_CLICKED, handler1);
@@ -84,5 +88,4 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
 }
