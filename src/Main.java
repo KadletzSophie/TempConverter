@@ -57,6 +57,14 @@ public class Main extends Application {
         EventHandler<MouseEvent> handler2 = new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                try {
+                    double fahrenheitNum = Double.parseDouble(tf_fahrenheit.getText());
+                    double celsius = (fahrenheitNum - 32) * 5 / 9;
+                    tf_celsius.setText(String.valueOf(celsius));
+                }
+                catch (Exception e){
+                    System.out.println("Bitte geben sie einen gültigen (numerischen) Wert ein.");
+                }
             }
 
         };
