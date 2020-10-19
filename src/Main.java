@@ -1,8 +1,11 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -12,7 +15,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static void main(String[] args) {
-
+        Application.launch(args);
     }
 
     @Override
@@ -35,10 +38,32 @@ public class Main extends Application {
         tf_celsius.setMinSize(100,20);
         tf_celsius.setStyle("-fx-font-size:20;-fx-font-weight: bold");
         TextField tf_fahrenheit = new TextField();
-        tf_fahrenheit.setMinSize(100,20); 
+        tf_fahrenheit.setMinSize(100,20);
         tf_fahrenheit.setStyle("-fx-font-size:20;-fx-font-weight: bold");
 
-        box_main.getChildren().addAll();
+        Button b_celsius = new Button("Convert C -> F");
+        b_celsius.setMinSize(100,35);
+
+        Button b_fahrenheit = new Button("Convert F -> C");
+        b_fahrenheit.setMinSize(100,35);
+
+        EventHandler<MouseEvent> handler1 = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+            }
+
+        };
+
+        EventHandler<MouseEvent> handler2 = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+            }
+
+        };
+
+        b_celsius.addEventHandler(MouseEvent.MOUSE_CLICKED, handler1);
+        b_fahrenheit.addEventHandler(MouseEvent.MOUSE_CLICKED, handler2);
+        box_main.getChildren().addAll(label_celsius,tf_celsius,label_fahrenheit,tf_fahrenheit, b_celsius, b_fahrenheit);
         stage.setTitle("Temp. Converter");
         stage.setScene(scene);
         stage.show();
